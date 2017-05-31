@@ -26,17 +26,17 @@
 	</div>
 	<form name='userLoginForm' method='post' action='userLogIn.php'> 
 		<div class="container">
-		<h3  style='text-align:center'>Log in</h3><br>
-		<label><b>Username</b></label>
-		<input type="text" placeholder="Enter Username" name="uname" required><br><br>
+			<h3  style='text-align:center'>Log in</h3><br>
+			<label><b>Username</b></label>
+			<input type="text" placeholder="Enter Username" name="uname" required><br><br>
 
-		<label><b>Password</b></label>
-		<input type="password" placeholder="Enter Password" name="psw" required><br><br>
-        <a><i>Forgot Password?</i></a><br><br>
+			<label><b>Password</b></label>
+			<input type="password" placeholder="Enter Password" name="psw" required><br><br>
+        	<a><i>Forgot Password?</i></a><br><br>
 		</div><br><br>
-		<div style='text-align: center;display: inline-block;'>
-		<button type="submit">SUBMIT</button><br><br>
-		</div>
+		<div style="text-align: center;">
+			<button type="submit">SUBMIT</button>
+  		</div>
 	</form><br>
 
 </body>
