@@ -35,7 +35,7 @@
         	<a><i>Forgot Password?</i></a><br><br>
 		</div><br><br>
 		<div style="text-align: center;">
-			
+			<button type="submit">SUBMIT</button>
   		</div>
 	</form><br>
 
