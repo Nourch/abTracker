@@ -1,15 +1,4 @@
 <?php
-require_once('User.php');
-require_once('DBConnection.php');
-
-
-$connection = DBConnection::connect();
-$connection->query('insert into user(firstName) values("nour")');
-echo $connection->error;
-
-
-
-die();
 	session_start();
 	include("dbConnection.php");
    
@@ -23,7 +12,7 @@ die();
 	}
 
 
-	$sql = "SELECT * FROM user WHERE email =" . $username . " and password = " . $password;
+	$sql = "SELECT * FROM user WHERE email =".$username." and password = ".$password;
 var_dump($sql);
 	$result = $conn->query($sql);
 	$count = mysqli_num_rows($result);
