@@ -1,3 +1,28 @@
+<?php
+	session_start();
+	include("dbConnection.php");
+   
+	if(isset($_POST["username"])){
+		$username = $_POST["username"];
+		$password = $_POST["password"];
+	}
+	else if($_SESSION["username"] != null){
+		$username = $_SESSION["username"];
+		$password = $_SESSION["password"];
+	}
+
+	$sql = "SELECT * FROM user WHERE email='".$username. "'and password = '".$password . "'" ;
+	$result = $conn->query($sql);
+	$count = mysqli_num_rows($result);
+	if ($count==1) {
+		 $_SESSION["password"] = $password;
+		 $_SESSION["username"] = $username;
+         header("location: loginForm.php");
+	}	
+	else{
+		$error = "Your email or Password is invalid";
+	}
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -24,18 +49,20 @@
 	<h1> TO </h1>
 	<h1> ABSENCE TRACKER</h1><br><br><b><br>
 	</div>
-	<form name='userLoginForm' method='post' action='userLogIn.php'> 
+	<form  method='post' action=''> 
 		<div class="container">
 			<h3  style='text-align:center'>Log in</h3><br>
 			<label><b>Username</b></label>
-			<input type="text" placeholder="Enter Username" name="uname" required><br><br>
+			<input type="text" placeholder="Enter Username" name="username" required><br><br>
 
 			<label><b>Password</b></label>
-			<input type="password" placeholder="Enter Password" name="psw" required><br><br>
+			<input type="password" placeholder="Enter Password" name="password" required><br><br>
         	<a><i>Forgot Password?</i></a><br><br>
+			<div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
 		</div><br><br>
 		<div style="text-align: center;">
 			<button type="submit">SUBMIT</button>
+			
   		</div>
 	</form><br>
 
